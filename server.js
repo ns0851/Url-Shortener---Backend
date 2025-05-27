@@ -29,7 +29,9 @@ app.use('/api/auth', authRouter)
 app.use('/api/create', urlRouter);
 app.use('/', urlRouter);
 
-app.listen(3000, () => {
+
+const PORT = process.env.PORT || 3000
+app.listen(PORT, () => {
     connectDB();
-    console.log("Listening on port 3000");
+    console.log("Listening on port: ", PORT);
 })
